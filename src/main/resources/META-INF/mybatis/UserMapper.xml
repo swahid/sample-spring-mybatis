@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+    <!-- 
+    ================================================================================
+    @author     Saurav Wahid<saurav1161@gmail.com>
+    @web        www.javabase.org
+    @version    1.0.1
+    @since      1.0.0
+    ================================================================================
+    -->
+<mapper namespace="org.javabase.apps.mapper.UserMapper">
+	<cache />
+    <resultMap id="userList" type="User">
+        <result property="userid"     column="userid" />
+        <result property="roleid"     column="roleid" />
+        <result property="rolename"    column="rolename" />
+        <result property="username"    column="username" />
+        <result property="password"    column="password" />
+        <result property="email"    column="email" />
+        <result property="firstName"    column="firstname" />
+        <result property="lastName"    column="lastname" />
+        <result property="phone"    column="phone" />
+        <result property="isactive"    column="isactive" />
+        <result property="regdate"    column="regdate" />
+        <result property="isnonexpired"    column="isnonexpired" />
+        <result property="isnonlocked"    column="isnonlocked" />
+        <result property="expDate"    column="expdate" />
+    </resultMap>
+    
+    <select id="getAllUsers" resultMap="userList">
+        select * from user
+    </select>
+    
+    <insert id="addUser" parameterType="User">
+    INSERT INTO User(
+        userid,
+        roleid,
+        username,
+        password,
+        email,
+        firstName,
+        lastName,
+        isactive,
+        isnonexpired,
+        isnonlocked,
+        regdate
+    )
+    values(
+        #{userid},
+        #{roleid},
+        #{username},
+        #{password},
+        #{email},
+        #{firstName},
+        #{lastName},
+        #{isactive},
+        #{isnonexpired},
+        #{isnonlocked},
+        SYSDATE
+    )
+    </insert>
+    <select id="getUserByUsername" resultType="User" parameterType="String">
+    	select u.*, r.rolename as rolename from user u
+    	join role r on r.roleid = u.roleid
+    	where u.username =#{username}
+    </select>
+    
+</mapper>

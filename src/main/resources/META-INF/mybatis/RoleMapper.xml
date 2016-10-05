@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+    <!-- 
+    ================================================================================
+    @author     Saurav Wahid<saurav1161@gmail.com>
+    @web        www.javabase.org
+    @version    1.0.1
+    @since      1.0.0
+    ================================================================================
+    -->
+<mapper namespace="org.javabase.apps.mapper.RoleMapper">
+	<cache />
+    <resultMap id="roleList" type="Role">
+        <result property="roleid"     column="roleid" />
+        <result property="rolename"     column="rolename" />
+    </resultMap>
+    
+    <select id="getAllUsers" resultMap="roleList">
+        select * from role
+    </select>
+    
+</mapper>
