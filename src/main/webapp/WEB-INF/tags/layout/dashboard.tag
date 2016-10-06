@@ -28,7 +28,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
           page. However, you can choose any other skin. Make sure you
           apply the skin class to the body tag so the changes take effect.
     -->
-    <link rel="stylesheet" href="resources/css/skins/skin-purple-light.min.css">
+    <link rel="stylesheet" href="resources/css/skins/skin-red-light.min.css">
     <!-- REQUIRED JS SCRIPTS -->
 
     <!-- jQuery 2.1.4 -->
@@ -65,7 +65,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   |               | sidebar-mini                            |
   |---------------------------------------------------------|
   -->
-<body class="hold-transition skin-purple-light sidebar-collapse">
+<body class="hold-transition skin-red-light sidebar-collapse">
     <c:url var="index" value="/" />
     <div class="wrapper">
 
