@@ -40,7 +40,7 @@ public class LoginController {
 		user.setIsactive("Y");
 		user.setIsnonexpired("Y");
 		user.setIsnonlocked("Y");
-		
+		user.setRegdate(new Date());
 		userservice.addUser(user);
 		response.put("suceess", true);
         response.put("message", "Registration Sucess");

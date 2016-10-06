@@ -40,8 +40,8 @@
         username,
         password,
         email,
-        firstName,
-        lastName,
+        firstname,
+        lastname,
         isactive,
         isnonexpired,
         isnonlocked,
@@ -58,7 +58,7 @@
         #{isactive},
         #{isnonexpired},
         #{isnonlocked},
-        SYSDATE
+        #{regdate}
     )
     </insert>
     <select id="getUserByUsername" resultType="User" parameterType="String">
